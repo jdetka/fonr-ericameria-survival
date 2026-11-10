@@ -1,0 +1,67 @@
+MODEL: Primary GLMM (scaled predictors; includes plant RE)
+SURVIVAL_RULE: raw 
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: live ~ f.type * f.tmt + jday_z + sin_z + cos_z + (1 | f.patch_u/f.plot_u) +      (1 | f.plant)
+   Data: data
+Control: ctrl
+
+     AIC      BIC   logLik deviance df.resid 
+  2284.4   2349.7  -1132.2   2264.4     5090 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-35.388   0.002   0.016   0.095  48.295 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ f.plant            (Intercept)  6.151   2.480   
+ f.plot_u:f.patch_u (Intercept) 10.102   3.178   
+ f.patch_u          (Intercept)  1.041   1.020   
+Number of obs: 5100, groups:  f.plant, 600; f.plot_u:f.patch_u, 120; f.patch_u, 60
+
+Fixed effects:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)        10.89361    0.90948  11.978  < 2e-16 ***
+f.typeOU           -2.93591    1.03249  -2.844 0.004462 ** 
+f.tmtNONE          -9.78600    1.05973  -9.234  < 2e-16 ***
+jday_z             -2.42517    0.14232 -17.041  < 2e-16 ***
+sin_z               0.73981    0.08478   8.727  < 2e-16 ***
+cos_z              -0.28992    0.08063  -3.596 0.000324 ***
+f.typeOU:f.tmtNONE  5.47705    1.35260   4.049 5.14e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) f.tyOU f.NONE jday_z sin_z  cos_z 
+f.typeOU    -0.600                                   
+f.tmtNONE   -0.782  0.480                            
+jday_z      -0.487  0.061  0.381                     
+sin_z        0.135  0.007 -0.080 -0.111              
+cos_z       -0.105  0.023  0.037 -0.076 -0.205       
+f.tOU:.NONE  0.470 -0.719 -0.678 -0.133  0.019  0.011
+Analysis of Deviance Table (Type III Wald chisquare tests)
+
+Response: live
+                Chisq Df Pr(>Chisq)    
+(Intercept)  143.4682  1  < 2.2e-16 ***
+f.type         8.0856  1  0.0044619 ** 
+f.tmt         85.2754  1  < 2.2e-16 ***
+jday_z       290.3876  1  < 2.2e-16 ***
+sin_z         76.1520  1  < 2.2e-16 ***
+cos_z         12.9277  1  0.0003238 ***
+f.type:f.tmt  16.3967  1  5.138e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Singular fit?  FALSE 
+
+Convergence messages:
+NULL
+
+VarCorr:
+ Groups             Name        Std.Dev.
+ f.plant            (Intercept) 2.4801  
+ f.plot_u:f.patch_u (Intercept) 3.1783  
+ f.patch_u          (Intercept) 1.0204  

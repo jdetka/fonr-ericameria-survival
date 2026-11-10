@@ -1,0 +1,25 @@
+contrast,estimate,conf.low,conf.high,log_est,SE,z,p,model_type,SURVIVAL_RULE,source_file
+"Herbivory (NONE vs CAGE) | Cohort 1, IN",0.133601338,0.052688873,0.338768256,-2.012895002,0.474722442,-4.240151347,2.23E-05,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Herbivory (NONE vs CAGE) | Cohort 1, OU",0.495881514,0.297009066,0.827915725,-0.701418263,0.261517527,-2.682108047,0.007315983,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Patch (OU vs IN) | Cohort 1, CAGE",0.131676267,0.05293407,0.327551602,-2.027408889,0.46494858,-4.360501303,1.30E-05,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Patch (OU vs IN) | Cohort 1, NONE",0.488736324,0.278340085,0.8581703,-0.715932151,0.287234406,-2.492501369,0.012684684,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Overall patch (OU vs IN), treatment-avg | Cohort 1",0.253682823,0.147897171,0.435133237,-1.37167052,0.275289549,-4.982646537,6.27E-07,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Overall herbivory (NONE vs CAGE), patch-avg | Cohort 1",0.257391596,0.151392398,0.437607403,-1.357156633,0.270777307,-5.012076712,5.38E-07,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Herbivory (NONE vs CAGE) | Cohort 2, IN",0.001368957,6.44E-04,0.002911106,-6.593706173,0.384940884,-17.12913968,9.00E-66,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Herbivory (NONE vs CAGE) | Cohort 2, OU",0.067938655,0.038470663,0.119978717,-2.689150117,0.290157757,-9.267889809,1.90E-20,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Patch (OU vs IN) | Cohort 2, CAGE",0.878699709,0.426460732,1.810514122,-0.129312068,0.368838224,-0.350592915,0.725893772,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Patch (OU vs IN) | Cohort 2, NONE",43.60814686,26.82291034,70.89724599,3.775243987,0.247952858,15.22565224,2.39E-52,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Overall patch (OU vs IN), treatment-avg | Cohort 2",6.190191106,4.094036146,9.359581735,1.82296596,0.210936043,8.642268707,5.51E-18,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Overall herbivory (NONE vs CAGE), patch-avg | Cohort 2",0.009643915,0.005921634,0.015705986,-4.641428145,0.248834062,-18.65270415,1.20E-77,GEE_OR,raw,contrast_table_raw_GEE.csv
+"Herbivory (NONE vs CAGE) | Cohort 1, IN",7.608242287,3.088652862,18.74129379,2.029232171,0.459947522,4.411877608,1.02E-05,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Herbivory (NONE vs CAGE) | Cohort 1, OU",1.66928087,1.188489819,2.344570883,0.512392917,0.173321161,2.956320588,0.003113333,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Patch (OU vs IN) | Cohort 1, CAGE",6.917153002,2.592050158,18.45913572,1.934004269,0.500793439,3.861880209,1.13E-04,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Patch (OU vs IN) | Cohort 1, NONE",1.517652928,0.839497395,2.743630203,0.417165015,0.302100469,1.380881717,0.167315332,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Overall patch (OU vs IN), treatment-avg | Cohort 1",3.240036652,1.686711179,6.223850081,1.175584642,0.333063295,3.529613324,4.16E-04,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Overall herbivory (NONE vs CAGE), patch-avg | Cohort 1",3.563747088,2.198837998,5.77591133,1.270812544,0.246369136,5.158164557,2.49E-07,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Herbivory (NONE vs CAGE) | Cohort 2, IN",112.7575981,43.8007629,290.2752164,4.725240365,0.482443434,9.794392535,1.19E-22,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Herbivory (NONE vs CAGE) | Cohort 2, OU",9.296516832,2.993042815,28.87537217,2.229639796,0.578239419,3.8559111,1.15E-04,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Patch (OU vs IN) | Cohort 2, CAGE",1.494946389,0.355938215,6.278799561,0.402090346,0.732187992,0.549162716,0.582893789,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Patch (OU vs IN) | Cohort 2, NONE",0.123253727,0.060848487,0.249660792,-2.093510223,0.360131688,-5.813179716,6.13E-09,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Overall patch (OU vs IN), treatment-avg | Cohort 2",0.429252507,0.181291644,1.016360769,-0.845709939,0.439764445,-1.923097577,0.054467797,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv
+"Overall herbivory (NONE vs CAGE), patch-avg | Cohort 2",32.37673406,15.38723352,68.12484563,3.47744008,0.379541789,9.16220606,5.08E-20,Cox_HR,last_alive,contrast_table_last_alive_Cox.csv

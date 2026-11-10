@@ -1,0 +1,72 @@
+MODEL: Primary GLMM (scaled predictors; includes plant RE)
+SURVIVAL_RULE: last_alive 
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: live ~ f.type * f.tmt + jday_z + sin_z + cos_z + (1 | f.patch_u/f.plot_u) +      (1 | f.plant)
+   Data: data
+Control: ctrl
+
+     AIC      BIC   logLik deviance df.resid 
+  1515.6   1581.0   -747.8   1495.6     5090 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-0.5370  0.0000  0.0000  0.0000  0.4715 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ f.plant            (Intercept) 1077.61  32.827  
+ f.plot_u:f.patch_u (Intercept)  820.20  28.639  
+ f.patch_u          (Intercept)   27.57   5.251  
+Number of obs: 5100, groups:  f.plant, 600; f.plot_u:f.patch_u, 120; f.patch_u, 60
+
+Fixed effects:
+                     Estimate Std. Error    z value Pr(>|z|)    
+(Intercept)         7.131e+01  7.517e-04  94866.046   <2e-16 ***
+f.typeOU            6.207e+00  4.886e+00      1.271    0.204    
+f.tmtNONE          -3.090e+01  7.518e-04 -41100.134   <2e-16 ***
+jday_z             -2.552e+01  7.551e-04 -33804.166   <2e-16 ***
+sin_z               3.121e+00  7.530e-04   4145.067   <2e-16 ***
+cos_z               3.534e+00  7.564e-04   4671.977   <2e-16 ***
+f.typeOU:f.tmtNONE -9.227e+00  7.526e+00     -1.226    0.220    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) f.tyOU f.NONE jday_z sin_z  cos_z 
+f.typeOU     0.000                                   
+f.tmtNONE   -0.247  0.000                            
+jday_z      -0.005  0.000 -0.005                     
+sin_z        0.005  0.000  0.005 -0.040              
+cos_z        0.005  0.000  0.005 -0.043  0.040       
+f.tOU:.NONE -0.001 -0.624 -0.001  0.002 -0.002 -0.001
+optimizer (bobyqa) convergence code: 0 (OK)
+unable to evaluate scaled gradient
+Model failed to converge: degenerate  Hessian with 1 negative eigenvalues
+
+Analysis of Deviance Table (Type III Wald chisquare tests)
+
+Response: live
+                  Chisq Df Pr(>Chisq)    
+(Intercept)  8.9996e+09  1     <2e-16 ***
+f.type       1.6143e+00  1     0.2039    
+f.tmt        1.6892e+09  1     <2e-16 ***
+jday_z       1.1427e+09  1     <2e-16 ***
+sin_z        1.7182e+07  1     <2e-16 ***
+cos_z        2.1827e+07  1     <2e-16 ***
+f.type:f.tmt 1.5032e+00  1     0.2202    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Singular fit?  FALSE 
+
+Convergence messages:
+[1] "unable to evaluate scaled gradient"                                       
+[2] "Model failed to converge: degenerate  Hessian with 1 negative eigenvalues"
+
+VarCorr:
+ Groups             Name        Std.Dev.
+ f.plant            (Intercept) 32.8269 
+ f.plot_u:f.patch_u (Intercept) 28.6391 
+ f.patch_u          (Intercept)  5.2505 

@@ -1,0 +1,37 @@
+MODEL: Cox cohort interaction (f.type * f.tmt * f.cohort), clustered by patch
+SURVIVAL_RULE: last_alive 
+
+Call:
+survival::coxph(formula = survival::Surv(time, event) ~ f.type + 
+    f.tmt + f.cohort + f.type:f.tmt + f.type:f.cohort + f.tmt:f.cohort + 
+    f.type:f.tmt:f.cohort, data = plant_tbl, cluster = f.patch_u)
+
+  n= 600, number of events= 263 
+
+                                coef exp(coef) se(coef) robust se      z Pr(>|z|)    
+f.typeOU                      1.9340    6.9172   0.4124    0.5008  3.862 0.000113 ***
+f.tmtNONE                     2.0292    7.6082   0.4077    0.4599  4.412 1.02e-05 ***
+f.cohort2                    -0.7702    0.4629   0.6292    0.6145 -1.253 0.210034    
+f.typeOU:f.tmtNONE           -1.5168    0.2194   0.4613    0.4903 -3.094 0.001977 ** 
+f.typeOU:f.cohort2           -1.5319    0.2161   0.7660    0.8828 -1.735 0.082672 .  
+f.tmtNONE:f.cohort2           2.6960   14.8205   0.6583    0.6621  4.072 4.66e-05 ***
+f.typeOU:f.tmtNONE:f.cohort2 -0.9788    0.3758   0.8183    0.8903 -1.099 0.271618    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+                             exp(coef) exp(-coef) lower .95 upper .95
+f.typeOU                        6.9172    0.14457   2.59210   18.4588
+f.tmtNONE                       7.6082    0.13144   3.08870   18.7410
+f.cohort2                       0.4629    2.16027   0.13882    1.5436
+f.typeOU:f.tmtNONE              0.2194    4.55780   0.08393    0.5736
+f.typeOU:f.cohort2              0.2161    4.62702   0.03831    1.2193
+f.tmtNONE:f.cohort2            14.8205    0.06747   4.04863   54.2519
+f.typeOU:f.tmtNONE:f.cohort2    0.3758    2.66116   0.06563    2.1516
+
+Concordance= 0.812  (se = 0.022 )
+Likelihood ratio test= 367.4  on 7 df,   p=<2e-16
+Wald test            = 146.6  on 7 df,   p=<2e-16
+Score (logrank) test = 563  on 7 df,   p=<2e-16,   Robust = 47.02  p=6e-08
+
+  (Note: the likelihood ratio and score tests assume independence of
+     observations within a cluster, the Wald and robust score tests do not).

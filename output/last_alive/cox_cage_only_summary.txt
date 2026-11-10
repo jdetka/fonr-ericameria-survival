@@ -1,0 +1,24 @@
+MODEL: CAGE-only Cox PH (viability; clustered by patch)
+SURVIVAL_RULE: last_alive 
+
+Call:
+survival::coxph(formula = survival::Surv(time, event) ~ f.type, 
+    data = plant_tbl_cage, cluster = f.patch_u)
+
+  n= 300, number of events= 54 
+
+           coef exp(coef) se(coef) robust se     z Pr(>|z|)    
+f.typeOU 1.4709    4.3530   0.3381    0.4156 3.539 0.000401 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+         exp(coef) exp(-coef) lower .95 upper .95
+f.typeOU     4.353     0.2297     1.928     9.829
+
+Concordance= 0.668  (se = 0.039 )
+Likelihood ratio test= 23.83  on 1 df,   p=1e-06
+Wald test            = 12.53  on 1 df,   p=4e-04
+Score (logrank) test = 22.58  on 1 df,   p=2e-06,   Robust = 7.48  p=0.006
+
+  (Note: the likelihood ratio and score tests assume independence of
+     observations within a cluster, the Wald and robust score tests do not).

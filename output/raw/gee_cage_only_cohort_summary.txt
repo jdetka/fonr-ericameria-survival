@@ -1,0 +1,27 @@
+MODEL: CAGE-only GEE (RAW; f.type * f.cohort)
+SURVIVAL_RULE: raw 
+
+
+Call:
+geepack::geeglm(formula = live ~ f.type * f.cohort + jday_z + 
+    sin_z + cos_z, family = binomial, data = d_cage, control = gee_ctrl, 
+    id = pid, corstr = "independence")
+
+ Coefficients:
+                   Estimate Std.err  Wald Pr(>|W|)    
+(Intercept)          4.4155  0.4825 83.75  < 2e-16 ***
+f.typeOU            -2.1234  0.4892 18.84  1.4e-05 ***
+f.cohort2            0.3856  0.5759  0.45  0.50306    
+jday_z              -0.9410  0.1641 32.88  9.8e-09 ***
+sin_z                0.7987  0.0892 80.21  < 2e-16 ***
+cos_z               -0.4078  0.1556  6.87  0.00877 ** 
+f.typeOU:f.cohort2   1.9960  0.6029 10.96  0.00093 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation structure = independence 
+Estimated Scale Parameters:
+
+            Estimate Std.err
+(Intercept)     1.31    6.31
+Number of clusters:   1350  Maximum cluster size: 9 

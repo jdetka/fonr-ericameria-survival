@@ -1,0 +1,45 @@
+MODEL: Cohort-specific GAM
+SURVIVAL_RULE: raw 
+
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+live ~ f.type * f.tmt + s(jday, k = 5) + s(f.patch_u, bs = "re")
+
+Parametric coefficients:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)           5.983      0.502   11.91  < 2e-16 ***
+f.typeOU             -2.644      0.620   -4.26  2.0e-05 ***
+f.tmtNONE            -2.591      0.302   -8.59  < 2e-16 ***
+f.typeOU:f.tmtNONE    1.655      0.351    4.72  2.4e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+              edf Ref.df Chi.sq p-value    
+s(jday)       3.3   3.69    353  <2e-16 ***
+s(f.patch_u) 25.3  28.00    194  <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.477   Deviance explained = 48.8%
+-REML = 623.18  Scale est. = 1         n = 2700
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+live ~ f.type * f.tmt + s(jday, k = 5) + s(f.patch_u, bs = "re")
+
+Parametric Terms:
+             df Chi.sq p-value
+f.type        1   18.2 2.0e-05
+f.tmt         1   73.8 < 2e-16
+f.type:f.tmt  1   22.3 2.4e-06
+
+Approximate significance of smooth terms:
+               edf Ref.df Chi.sq p-value
+s(jday)       3.30   3.69    353  <2e-16
+s(f.patch_u) 25.26  28.00    194  <2e-16

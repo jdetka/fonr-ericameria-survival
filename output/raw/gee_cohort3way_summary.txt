@@ -1,0 +1,31 @@
+MODEL: GEE cohort interaction (f.type * f.tmt * f.cohort)
+SURVIVAL_RULE: raw 
+
+
+Call:
+geepack::geeglm(formula = live ~ f.type * f.tmt * f.cohort + 
+    jday_z + sin_z + cos_z, family = binomial, data = d_in, control = gee_ctrl, 
+    id = pid, corstr = "independence")
+
+ Coefficients:
+                             Estimate Std.err   Wald Pr(>|W|)    
+(Intercept)                    4.1210  0.4287  92.39  < 2e-16 ***
+f.typeOU                      -2.0274  0.4649  19.01  1.3e-05 ***
+f.tmtNONE                     -2.0129  0.4747  17.98  2.2e-05 ***
+f.cohort2                      1.0058  0.5218   3.72  0.05390 .  
+jday_z                        -1.3101  0.0827 250.77  < 2e-16 ***
+sin_z                          0.4233  0.0511  68.72  < 2e-16 ***
+cos_z                         -0.0352  0.0621   0.32  0.57071    
+f.typeOU:f.tmtNONE             1.3115  0.5424   5.85  0.01561 *  
+f.typeOU:f.cohort2             1.8981  0.5921  10.28  0.00135 ** 
+f.tmtNONE:f.cohort2           -4.5808  0.6127  55.89  7.6e-14 ***
+f.typeOU:f.tmtNONE:f.cohort2   2.5931  0.7206  12.95  0.00032 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation structure = independence 
+Estimated Scale Parameters:
+
+            Estimate Std.err
+(Intercept)     1.37    4.67
+Number of clusters:   2700  Maximum cluster size: 9 

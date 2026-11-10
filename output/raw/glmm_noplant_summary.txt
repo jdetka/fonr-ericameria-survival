@@ -1,0 +1,63 @@
+MODEL: GLMM without (1|f.plant) (diagnostic)
+SURVIVAL_RULE: raw 
+
+Generalized linear mixed model fit by maximum likelihood (Laplace Approximation) ['glmerMod']
+ Family: binomial  ( logit )
+Formula: live ~ f.type * f.tmt + jday_z + sin_z + cos_z + (1 | f.patch_u/f.plot_u)
+   Data: data
+Control: ctrl
+
+     AIC      BIC   logLik deviance df.resid 
+  2590.3   2649.2  -1286.2   2572.3     5091 
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-13.9627   0.0139   0.0799   0.2141   7.6597 
+
+Random effects:
+ Groups             Name        Variance Std.Dev.
+ f.plot_u:f.patch_u (Intercept) 4.5349   2.1295  
+ f.patch_u          (Intercept) 0.5552   0.7451  
+Number of obs: 5100, groups:  f.plot_u:f.patch_u, 120; f.patch_u, 60
+
+Fixed effects:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         6.72544    0.59237  11.353  < 2e-16 ***
+f.typeOU           -2.03126    0.71976  -2.822  0.00477 ** 
+f.tmtNONE          -6.15021    0.69742  -8.819  < 2e-16 ***
+jday_z             -1.46854    0.07719 -19.024  < 2e-16 ***
+sin_z               0.50026    0.06056   8.261  < 2e-16 ***
+cos_z              -0.15514    0.05959  -2.604  0.00923 ** 
+f.typeOU:f.tmtNONE  3.63895    0.89988   4.044 5.26e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+            (Intr) f.tyOU f.NONE jday_z sin_z  cos_z 
+f.typeOU    -0.728                                   
+f.tmtNONE   -0.793  0.578                            
+jday_z      -0.225  0.049  0.203                     
+sin_z        0.041 -0.001 -0.011  0.181              
+cos_z        0.016  0.004 -0.053 -0.365 -0.201       
+f.tOU:.NONE  0.558 -0.744 -0.730 -0.103  0.007  0.042
+Analysis of Deviance Table (Type III Wald chisquare tests)
+
+Response: live
+                Chisq Df Pr(>Chisq)    
+(Intercept)  128.9007  1  < 2.2e-16 ***
+f.type         7.9644  1   0.004771 ** 
+f.tmt         77.7672  1  < 2.2e-16 ***
+jday_z       361.9294  1  < 2.2e-16 ***
+sin_z         68.2475  1  < 2.2e-16 ***
+cos_z          6.7783  1   0.009227 ** 
+f.type:f.tmt  16.3527  1  5.258e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Convergence messages:
+NULL
+
+VarCorr:
+ Groups             Name        Std.Dev.
+ f.plot_u:f.patch_u (Intercept) 2.12954 
+ f.patch_u          (Intercept) 0.74511 

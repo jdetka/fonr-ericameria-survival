@@ -1,0 +1,31 @@
+MODEL: Fixed-site GLM (sensitivity)
+SURVIVAL_RULE: last_alive 
+
+
+Call:
+glm(formula = f_site, family = binomial, data = d_in)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)         4.12805    0.20127  20.510  < 2e-16 ***
+f.typeOU           -1.32473    0.20554  -6.445 1.16e-10 ***
+f.tmtNONE          -3.88704    0.19640 -19.791  < 2e-16 ***
+jday_z             -1.02018    0.04900 -20.819  < 2e-16 ***
+sin_z               0.35656    0.04657   7.657 1.91e-14 ***
+cos_z              -0.20740    0.04730  -4.385 1.16e-05 ***
+f.siteB3           -0.08311    0.13593  -0.611 0.540890    
+f.siteF7            0.69781    0.14723   4.740 2.14e-06 ***
+f.siteL3            0.54502    0.14449   3.772 0.000162 ***
+f.siteR5            0.05669    0.13748   0.412 0.680067    
+f.typeOU:f.tmtNONE  2.63922    0.23379  11.289  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 4796.1  on 5099  degrees of freedom
+Residual deviance: 3184.2  on 5089  degrees of freedom
+AIC: 3206.2
+
+Number of Fisher Scoring iterations: 6
+
